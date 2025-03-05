@@ -1,17 +1,76 @@
 @use "functions" as *;
 
-@font-face {
-  font-family: "Inter";
-  src: url(../assets/fonts/Inter-VariableFont_slnt_wght.ttf);
-}
-
 // colors
-$dark-space-blue: #00001a;
-$gunmetal: #5e607a;
-$light-vermillion: #f15d51;
-$yellow: #e9aa52;
-$almost-white: #fffdfa;
-$silver: #c5c6ce;
+$white: #ffffff;
+$black: #000000;
+$grey-950: #1d2026;
+$grey-500: #69707d;
+$grey-300: #c3cad9;
+$grey-100: #e4e9f2;
+$grey-50: #f6f8fd;
+$orange-500: #ff7e1b;
+$orange-300: #ffab6a;
 
 // Typography
-$font-family: "Inter";
+$font-family: "Kumbh Sans";
+
+// Spacing
+$spacing-0: 0;
+$spacing-100: rem(8px);
+$spacing-200: rem(16px);
+$spacing-300: rem(24px);
+$spacing-400: rem(32px);
+$spacing-500: rem(40px);
+$spacing-600: rem(48px);
+$spacing-700: rem(56px);
+$spacing-900: rem(72px);
+$spacing-1000: rem(80px);
+$spacing-1200: rem(96px);
+$spacing-1300: rem(104px);
+$spacing-1600: rem(128px);
+
+.text-preset-1-bold {
+  font-family: $font-family;
+  font-size: rem(44px);
+  font-weight: 700;
+  line-height: rem(48px); /* 109.091% */
+}
+
+.text-preset-2-bold {
+  font-family: $font-family;
+  font-size: rem(28px);
+  font-weight: 700;
+  line-height: rem(32px); /* 114.286% */
+}
+
+.text-preset-3-bold {
+  font-size: rem(16px);
+  font-weight: 700;
+  line-height: rem(26px); /* 162.5% */
+}
+
+.text-preset-3-regular {
+  font-size: rem(16px);
+  font-weight: 400;
+  line-height: rem(26px); /* 162.5% */
+}
+
+.text-preset-4-regular {
+  font-size: rem(15px);
+  font-weight: 400;
+  line-height: rem(26px); /* 173.333% */
+}
+
+.text-preset-5-bold {
+  font-size: rem(13px);
+  font-weight: 700;
+  line-height: rem(16px); /* 123.077% */
+  letter-spacing: rem(2px);
+}
+
+.text-preset-6-bold {
+  font-size: rem(12px);
+  font-weight: 700;
+  line-height: rem(15px); /* 125% */
+  letter-spacing: rem(2px);
+}
