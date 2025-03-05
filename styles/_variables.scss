@@ -1,0 +1,17 @@
+@use "functions" as *;
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/fonts/Inter-VariableFont_slnt_wght.ttf);
+}
+
+// colors
+$dark-space-blue: #00001a;
+$gunmetal: #5e607a;
+$light-vermillion: #f15d51;
+$yellow: #e9aa52;
+$almost-white: #fffdfa;
+$silver: #c5c6ce;
+
+// Typography
+$font-family: "Inter";
