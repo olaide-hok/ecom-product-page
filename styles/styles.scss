@@ -34,14 +34,127 @@ body {
   display: flex;
 }
 
+button {
+  border: none;
+  background: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.sneakers {
+  .navigation {
+    .desktop_nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: rem(21px) $spacing-300 $spacing-300;
+      border-bottom: 1px solid $grey-100;
+
+      .menu-links_wrapper {
+        .menu_icon-and-logo {
+          align-items: baseline;
+          column-gap: $spacing-200;
+
+          .logo {
+            width: rem(137.5px);
+            height: rem(20px);
+          }
+          .mobile_menu-btn {
+            img {
+              width: 16px;
+              height: 15px;
+            }
+          }
+        }
+
+        .links {
+          display: none;
+        }
+      }
+
+      .avatar_cart {
+        column-gap: $spacing-300;
+
+        .cart-btn {
+          // border: none;
+          // background: none;
+        }
+
+        .avatar {
+          img {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (min-width: 768px) {
- 
+  .sneakers {
+    padding: rem(28px) $spacing-1000;
+    .navigation {
+      .desktop_nav {
+        padding: 0;
+        padding-bottom: $spacing-400;
+        .menu-links_wrapper {
+          .links {
+            display: none;
+          }
+        }
+
+        .avatar_cart {
+          column-gap: $spacing-600;
+
+          .avatar {
+            img {
+              height: rem(50px);
+              width: rem(50px);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .sneakers {
+    .navigation {
+      .desktop_nav {
+        .menu-links_wrapper {
+          column-gap: $spacing-700;
+          .menu_icon-and-logo {
+            .mobile_menu-btn {
+              display: none;
+            }
+          }
+
+          .links {
+            display: flex;
+            column-gap: $spacing-400;
+            li {
+              a {
+                color: $grey-500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
- 
 }
