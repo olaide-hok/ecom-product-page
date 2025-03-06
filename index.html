@@ -26,9 +26,123 @@
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
-    Collections Men Women About Contact Sneaker Company Fall Limited Edition
-    Sneakers These low-profile sneakers are your perfect casual wear companion.
-    Featuring a durable rubber outer sole, they’ll withstand everything the
-    weather can offer. $125.00 50% $250.00 0 Add to cart
+    <main class="sneakers">
+      <header role="navigation" class="navigation">
+        <nav class="d-flex desktop_nav">
+          <div class="d-flex menu-links_wrapper">
+            <div class="d-flex menu_icon-and-logo">
+              <button id="mobile-menu" class="mobile_menu-btn" type="button">
+                <img src="./images/icon-menu.svg" alt="icon-menu">
+              </button>
+              <img
+                class="logo"
+                src="./images/logo.svg"
+                alt="sneakers text logo"
+              >
+            </div>
+
+            <ul class="text-preset-4-regular links">
+              <li>
+                <a href="#"> Collections </a>
+              </li>
+              <li>
+                <a href="#"> Men </a>
+              </li>
+              <li>
+                <a href="#"> Women </a>
+              </li>
+              <li>
+                <a href="#"> About </a>
+              </li>
+              <li>
+                <a href="#"> Contact </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex avatar_cart">
+            <button id="cart_icon" class="cart-btn" type="button">
+              <img
+                class="cart_icon"
+                src="./images/icon-cart.svg"
+                alt="icon cart"
+              >
+            </button>
+            <div class="avatar">
+              <img src="./images/image-avatar.png" alt="avatar">
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile and Tablet Navigation -->
+        <nav class="mobile_nav d-none">
+          <img src="./images/icon-close.svg" alt="icon close">
+          <div class="links">
+            <ul>
+              <li>
+                <a href="#"> Collections </a>
+              </li>
+              <li>
+                <a href="#"> Men </a>
+              </li>
+              <li>
+                <a href="#"> Women </a>
+              </li>
+              <li>
+                <a href="#"> About </a>
+              </li>
+              <li>
+                <a href="#"> Contact </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Product Page Content -->
+      <div class="product_center">
+        <!-- Product Images -->
+        <section class="images">
+          <img src="" alt="">
+          <div class="gallery">
+            <img src="" alt="">
+          </div>
+        </section>
+        <!-- Product Details -->
+        <section class="details">
+          <div class="data">
+            <p class="brand">Sneaker Company</p>
+            <p class="name">Fall Limited Edition Sneakers</p>
+            <p class="desc">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+          </div>
+          <div class="price">
+            <span class="sale"> $125.00</span>
+            <span class="discount">50% </span>
+            <p class="old">$250.00</p>
+          </div>
+
+          <div class="qty add-to-cart-btn">
+            <div class="qty_wrapper">
+              <button class="dec" type="button">
+                <img src="./images/icon-minus.svg" alt="icon minus">
+              </button>
+              <span id="quantity" class="qty" value="0">0</span>
+
+              <button class="inc" type="button">
+                <img src="./images/icon-plus.svg" alt="icon plus">
+              </button>
+            </div>
+            <button type="button">
+              <img src="./images/icon-cart.svg" alt="icon cart">
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
   </body>
 </html>
