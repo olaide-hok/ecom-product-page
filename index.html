@@ -100,16 +100,39 @@
       </header>
 
       <!-- Product Page Content -->
-      <div class="product_center">
+      <div class="d-flex product_content">
         <!-- Product Images -->
-        <section class="images">
-          <img src="" alt="">
+        <section class="product_images">
+          <img
+            class="active_img"
+            src="./images/image-product-1.jpg"
+            alt="product 1"
+          >
           <div class="gallery">
-            <img src="" alt="">
+            <img
+              class="thumbnail active"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="product 1 thumbnail"
+            >
+            <img
+              class="thumbnail"
+              src="./images/image-product-2-thumbnail.jpg"
+              alt="product 1 thumbnail"
+            >
+            <img
+              class="thumbnail"
+              src="./images/image-product-3-thumbnail.jpg"
+              alt="product 1 thumbnail"
+            >
+            <img
+              class="thumbnail"
+              src="./images/image-product-4-thumbnail.jpg"
+              alt="product 1 thumbnail"
+            >
           </div>
         </section>
         <!-- Product Details -->
-        <section class="details">
+        <section class="product_details">
           <div class="data">
             <p class="brand">Sneaker Company</p>
             <p class="name">Fall Limited Edition Sneakers</p>
@@ -119,25 +142,32 @@
               everything the weather can offer.
             </p>
           </div>
-          <div class="price">
-            <span class="sale"> $125.00</span>
-            <span class="discount">50% </span>
-            <p class="old">$250.00</p>
+          <div class="d-flex price">
+            <div class="d-flex wrapper">
+              <span class="sale text-preset-2-bold">$125.00</span>
+              <span class="discount text-preset-3-bold">50% </span>
+            </div>
+            <p class="old text-preset-3-bold">$250.00</p>
           </div>
 
-          <div class="qty add-to-cart-btn">
-            <div class="qty_wrapper">
+          <div class="d-flex qty-adt_wrapper">
+            <div class="d-flex quantity">
               <button class="dec" type="button">
                 <img src="./images/icon-minus.svg" alt="icon minus">
               </button>
-              <span id="quantity" class="qty" value="0">0</span>
-
+              <span id="quantity" class="qty text-preset-3-bold" value="0"
+                >0</span
+              >
               <button class="inc" type="button">
                 <img src="./images/icon-plus.svg" alt="icon plus">
               </button>
             </div>
-            <button type="button">
-              <img src="./images/icon-cart.svg" alt="icon cart">
+            <button
+              id="addToCart"
+              class="addToCart text-preset-3-bold"
+              type="button"
+            >
+              <img src="./images/icon-cart-btn.svg" alt="icon cart">
               Add to cart
             </button>
           </div>
