@@ -51,7 +51,31 @@ ul {
   list-style-type: none;
 }
 
+/* Overlay styles */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00001a; /* Dark blue background */
+  opacity: 0.5;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.d-none {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when hidden */
+}
+
+#overlay.d-flex {
+  opacity: 0.5;
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
 .sneakers {
+  position: relative;
   .navigation {
     .desktop_nav {
       display: flex;
@@ -90,6 +114,37 @@ ul {
             height: 1.5rem;
             width: 1.5rem;
           }
+        }
+      }
+    }
+  }
+  .mobile_nav {
+    background-color: $white;
+    flex-direction: column;
+    padding: $spacing-300;
+    position: absolute;
+    row-gap: $spacing-700;
+    height: 100%;
+    width: rem(250px);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: transform 0.3s ease;
+
+    &.d-none {
+      transform: translateX(-100%); /* Hide menu off-screen */
+    }
+
+    &.d-flex {
+      transform: translateX(0); /* Show menu */
+    }
+
+    .links {
+      flex-direction: column;
+      row-gap: $spacing-300;
+      li {
+        a {
+          color: $grey-950;
         }
       }
     }
@@ -215,6 +270,11 @@ ul {
           }
         }
       }
+    }
+
+    .mobile_nav {
+      padding: $spacing-600 $spacing-1000;
+      width: rem(301px);
     }
 
     .product_content {

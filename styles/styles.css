@@ -42,6 +42,12 @@
   letter-spacing: 0.125rem;
 }
 
+.text-mobile-menu {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 26px;
+}
+
 /* General body styling */
 body {
   position: relative; /* Ensures the body is positioned relative to its normal flow */
@@ -85,6 +91,32 @@ ul {
   list-style-type: none;
 }
 
+/* Overlay styles */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00001a; /* Dark blue background */
+  opacity: 0.5;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.d-none {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction when hidden */
+}
+
+#overlay.d-flex {
+  opacity: 0.5;
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
+.sneakers {
+  position: relative;
+}
 .sneakers .navigation .desktop_nav {
   display: flex;
   justify-content: space-between;
@@ -113,6 +145,32 @@ ul {
 .sneakers .navigation .desktop_nav .avatar_cart .avatar img {
   height: 1.5rem;
   width: 1.5rem;
+}
+.sneakers .mobile_nav {
+  background-color: #ffffff;
+  flex-direction: column;
+  padding: 1.5rem;
+  position: absolute;
+  row-gap: 3.5rem;
+  height: 100%;
+  width: 15.625rem;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+.sneakers .mobile_nav.d-none {
+  transform: translateX(-100%); /* Hide menu off-screen */
+}
+.sneakers .mobile_nav.d-flex {
+  transform: translateX(0); /* Show menu */
+}
+.sneakers .mobile_nav .links {
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.sneakers .mobile_nav .links li a {
+  color: #1d2026;
 }
 .sneakers .product_content {
   flex-direction: column;
@@ -205,6 +263,10 @@ ul {
   .sneakers .navigation .desktop_nav .avatar_cart .avatar img {
     height: 3.125rem;
     width: 3.125rem;
+  }
+  .sneakers .mobile_nav {
+    padding: 3rem 5rem;
+    width: 18.8125rem;
   }
   .sneakers .product_content {
     flex-direction: column;
