@@ -85,11 +85,6 @@ ul {
       .avatar_cart {
         column-gap: $spacing-300;
 
-        .cart-btn {
-          // border: none;
-          // background: none;
-        }
-
         .avatar {
           img {
             height: 1.5rem;
@@ -99,11 +94,106 @@ ul {
       }
     }
   }
+
+  .product_content {
+    flex-direction: column;
+
+    .product_images {
+      .active_img {
+        width: 100%;
+        height: rem(300px);
+      }
+
+      .gallery {
+        display: none;
+      }
+    }
+
+    .product_details {
+      margin-bottom: rem(70px);
+      margin-top: $spacing-300;
+      padding: 0 $spacing-300;
+
+      .data {
+        .brand {
+          color: $grey-500;
+          text-transform: uppercase;
+          font-size: rem(12px);
+          font-weight: 700;
+          letter-spacing: rem(1.846px);
+        }
+
+        .name {
+          @extend .text-preset-2-bold;
+          color: $grey-950;
+          margin: $spacing-200 0;
+        }
+
+        .desc {
+          @extend .text-preset-4-regular;
+          color: $grey-500;
+        }
+      }
+
+      .price {
+        justify-content: space-between;
+        margin: $spacing-400 0;
+
+        .wrapper {
+          column-gap: $spacing-200;
+          .sale {
+            color: $grey-950;
+          }
+
+          .discount {
+            border-radius: rem(6px);
+            background-color: $grey-950;
+            color: $white;
+            padding: rem(3px) rem(9px);
+          }
+        }
+
+        .old {
+          color: $grey-500;
+          text-decoration: line-through;
+        }
+      }
+
+      .qty-adt_wrapper {
+        flex-direction: column;
+        row-gap: $spacing-200;
+
+        .quantity {
+          border-radius: 10px;
+          background-color: $grey-50;
+          align-items: center;
+          justify-content: space-between;
+          padding: $spacing-200;
+          width: 100%;
+
+          .qty {
+            color: $grey-950;
+          }
+        }
+
+        .addToCart {
+          background-color: $orange-500;
+          border-radius: 10px;
+          color: $grey-950;
+          padding: $spacing-200 0;
+
+          img {
+            margin-right: $spacing-200;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
   .sneakers {
-    padding: rem(28px) $spacing-1000;
+    padding: rem(28px) $spacing-1000 rem(69px);
     .navigation {
       .desktop_nav {
         padding: 0;
@@ -122,6 +212,60 @@ ul {
               height: rem(50px);
               width: rem(50px);
             }
+          }
+        }
+      }
+    }
+
+    .product_content {
+      flex-direction: column;
+      margin-top: $spacing-600;
+      .product_images {
+        .active_img {
+          border-radius: 15px;
+        }
+      }
+
+      .product_details {
+        margin-top: $spacing-600;
+        margin-bottom: 0;
+        padding: 0;
+
+        .data {
+          .brand {
+            font-size: rem(13px);
+            font-weight: 700;
+            letter-spacing: rem(2px);
+          }
+
+          .name {
+            @include text-preset-1-bold;
+          }
+
+          .desc {
+            @include text-preset-3-regular;
+          }
+        }
+
+        .price {
+          flex-direction: column;
+          row-gap: $spacing-100;
+        }
+
+        .qty-adt_wrapper {
+          flex-direction: row;
+          column-gap: $spacing-100;
+
+          .quantity {
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            padding: $spacing-200 $spacing-300;
+          }
+
+          .addToCart {
+            flex: 1;
+            padding: rem(18px) 0;
           }
         }
       }
@@ -153,8 +297,98 @@ ul {
         }
       }
     }
+
+    .product_content {
+      column-gap: $spacing-1200;
+      flex-direction: row;
+      margin-top: $spacing-1000;
+
+      .product_images {
+        .active_img {
+          border-radius: 15px;
+          height: rem(445px);
+        }
+
+        .gallery {
+          display: flex;
+          column-gap: $spacing-400;
+          margin-top: $spacing-400;
+
+          .thumbnail {
+            border-radius: rem(10px);
+            cursor: pointer;
+            width: rem(88px);
+            height: rem(88px);
+
+            &.active {
+              border: 2px solid $orange-500;
+              background: linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 0.75) 0%,
+                rgba(255, 255, 255, 0.75) 100%
+              );
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .sneakers {
+    margin-bottom: $spacing-1600;
+    margin-top: rem(28px);
+    padding: 0;
+    width: rem(1110px);
+
+    .product_content {
+      column-gap: $spacing-1600;
+      flex-direction: row;
+      padding: 0 rem(44.5px);
+
+      .product_images {
+        flex: 1;
+      }
+
+      .product_details {
+        flex: 1;
+        margin-top: $spacing-600;
+        margin-bottom: 0;
+        padding: 0;
+
+        .data {
+          .name {
+            @include text-preset-1-bold;
+            margin: $spacing-200 0;
+          }
+
+          .desc {
+            @include text-preset-3-regular;
+          }
+        }
+
+        .price {
+          flex-direction: column;
+          row-gap: $spacing-100;
+        }
+
+        .qty-adt_wrapper {
+          flex-direction: row;
+          column-gap: $spacing-200;
+
+          .quantity {
+            flex: none;
+            padding: $spacing-200 rem(12px);
+            width: rem(157px);
+          }
+
+          .addToCart {
+            flex: 1;
+            padding: $spacing-200 0;
+          }
+        }
+      }
+    }
+  }
 }
