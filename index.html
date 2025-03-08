@@ -67,6 +67,7 @@
                 src="./images/icon-cart.svg"
                 alt="icon cart"
               >
+              <span class="d-none cart-qty">3</span>
             </button>
             <div class="avatar">
               <img src="./images/image-avatar.png" alt="avatar">
@@ -102,6 +103,40 @@
       </nav>
 
       <div id="overlay" class="d-none"></div>
+
+      <!-- Cart Modal -->
+      <div class="d-none cart_modal">
+        <h4 class="text-preset-3-bold cart_title">Cart</h4>
+        <div class="d-none cart_items">
+          <div class="d-flex cart_item">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              alt="sneaker"
+              width="50px"
+              height="50px"
+            >
+            <div class="cart_product_details">
+              <p class="text-preset-3-regular cart_product-name">
+                Fall Limited Edition Sneakers
+              </p>
+              <span class="text-preset-3-regular cart_price">$125.00 x 3</span>
+              <span class="text-preset-3-bold cart_total">$375.00</span>
+            </div>
+            <img
+              src="./images/icon-delete.svg"
+              alt="delete item"
+              width="14px"
+              height="16px"
+            >
+          </div>
+          <button class="text-preset-3-bold checkout-btn" type="button">
+            Checkout
+          </button>
+        </div>
+        <div class="cart_empty">
+          <h5 class="text-preset-3-bold empty">Your cart is empty</h5>
+        </div>
+      </div>
 
       <!-- Product Page Content -->
       <div class="d-flex product_content">
