@@ -189,12 +189,14 @@ ul {
 .sneakers .cart_modal {
   background-color: #ffffff;
   border-radius: 10px;
+  box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.1);
   flex-direction: column;
   margin: 0.5rem;
   row-gap: 1.5rem;
   padding: 1.5rem 0;
   position: absolute;
   width: 22.5rem;
+  right: 0;
   z-index: 3;
 }
 .sneakers .cart_modal .cart_title {
@@ -321,6 +323,9 @@ ul {
   .sneakers .navigation .desktop_nav .avatar_cart {
     column-gap: 3rem;
   }
+  .sneakers .navigation .desktop_nav .avatar_cart .cart-btn .cart-qty {
+    top: 0.5rem;
+  }
   .sneakers .navigation .desktop_nav .avatar_cart .avatar img {
     height: 3.125rem;
     width: 3.125rem;
@@ -328,6 +333,9 @@ ul {
   .sneakers .mobile_nav {
     padding: 3rem 5rem;
     width: 18.8125rem;
+  }
+  .sneakers .cart_modal {
+    top: 90px;
   }
   .sneakers .product_content {
     flex-direction: column;
@@ -421,10 +429,15 @@ ul {
     padding: 0;
     width: 69.375rem;
   }
+  .sneakers .cart_modal {
+    right: -85px;
+    top: 50px;
+  }
   .sneakers .product_content {
     column-gap: 8rem;
     flex-direction: row;
     padding: 0 2.78125rem;
+    margin-top: 6rem;
   }
   .sneakers .product_content .product_images {
     flex: 1;

@@ -168,12 +168,14 @@ ul {
   .cart_modal {
     background-color: $white;
     border-radius: 10px;
+    box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.1);
     flex-direction: column;
     margin: $spacing-100;
     row-gap: $spacing-300;
     padding: $spacing-300 0;
     position: absolute;
     width: rem(360px);
+    right: 0;
     z-index: 3;
 
     .cart_title {
@@ -334,6 +336,12 @@ ul {
         .avatar_cart {
           column-gap: $spacing-600;
 
+          .cart-btn {
+            .cart-qty {
+              top: rem(8px);
+            }
+          }
+
           .avatar {
             img {
               height: rem(50px);
@@ -347,6 +355,10 @@ ul {
     .mobile_nav {
       padding: $spacing-600 $spacing-1000;
       width: rem(301px);
+    }
+
+    .cart_modal {
+      top: 90px;
     }
 
     .product_content {
@@ -474,10 +486,16 @@ ul {
     padding: 0;
     width: rem(1110px);
 
+    .cart_modal {
+      right: -85px;
+      top: 50px;
+    }
+
     .product_content {
       column-gap: $spacing-1600;
       flex-direction: row;
       padding: 0 rem(44.5px);
+      margin-top: $spacing-1200;
 
       .product_images {
         flex: 1;
