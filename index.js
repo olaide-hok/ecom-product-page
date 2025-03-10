@@ -6,6 +6,20 @@ const closeMobileMenu = document.getElementById("close-menu");
 const mobileNav = document.getElementById("mobile-nav");
 const overlay = document.getElementById("overlay");
 
+// Gallery
+const mainImage = document.getElementById("main-img");
+
+// Lightbox
+const lightbox = document.querySelector(".lightbox");
+const lightboxImage = document.querySelector(".lightbox__main-img");
+const lightboxClose = document.querySelector(".lightbox__close");
+const lightboxPrev = document.querySelector(".lightbox__prev");
+const lightboxNext = document.querySelector(".lightbox__next");
+const lightboxThumbnails = document.querySelectorAll(
+  ".lightbox__thumbnail-btn",
+);
+let currentImage = 1;
+
 // Quantity
 const qtyDec = document.getElementById("decQty");
 const qtyInc = document.getElementById("incQty");
@@ -22,6 +36,55 @@ const cartEmpty = document.querySelector(".cart_empty");
 const cartDeleteBtn = document.getElementById("cartDelete");
 let cartCount = 0;
 let cartTotal = 0;
+
+// Lightbox functionality
+function openLightbox() {
+  // Only open lightbox on desktop
+  if (window.innerWidth >= 1024) {
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// Gallery functionality
+function updateMainImage(imageNumber) {
+  currentImage = imageNumber;
+  const mainImageSrc = `images/image-product-${imageNumber}.jpg`;
+  mainImage.src = mainImageSrc;
+  lightboxImage.src = mainImageSrc;
+
+  // Update lightbox thumbnail active state
+  lightboxThumbnails.forEach((btn) => {
+    btn.classList.toggle("active", parseInt(btn.dataset.image) === imageNumber);
+  });
+}
+
+function navigateLightbox(direction) {
+  let newImage = currentImage;
+  if (direction === "next") {
+    newImage = currentImage === 4 ? 1 : currentImage + 1;
+  } else {
+    newImage = currentImage === 1 ? 4 : currentImage - 1;
+  }
+  updateMainImage(newImage);
+}
+
+mainImage.addEventListener("click", openLightbox);
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxPrev.addEventListener("click", () => navigateLightbox("prev"));
+lightboxNext.addEventListener("click", () => navigateLightbox("next"));
+
+// Lightbox thumbnails
+lightboxThumbnails.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateMainImage(parseInt(btn.dataset.image));
+  });
+});
 
 cartBtn.addEventListener("click", () => {
   const isCartModalOpen = cartModal.classList.contains("d-flex");
