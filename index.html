@@ -120,11 +120,106 @@
         </div>
       </div>
 
+      <!-- lightbox -->
+      <div class="lightbox">
+        <div class="lightbox__content">
+          <button
+            type="button"
+            class="lightbox__close"
+            aria-label="Close lightbox"
+          >
+            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                fill="#FFFFFF"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="lightbox__prev"
+            aria-label="Previous image"
+          >
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button type="button" class="lightbox__next" aria-label="Next image">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                stroke-width="3"
+                fill="none"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <div class="lightbox__gallery">
+            <img
+              src="images/image-product-1.jpg"
+              alt="Fall Limited Edition Sneakers"
+              class="lightbox__main-img"
+            >
+            <div class="lightbox__thumbnails">
+              <button
+                type="button"
+                class="lightbox__thumbnail-btn active"
+                data-image="1"
+              >
+                <img
+                  src="images/image-product-1-thumbnail.jpg"
+                  alt="Thumbnail 1"
+                >
+              </button>
+              <button
+                type="button"
+                class="lightbox__thumbnail-btn"
+                data-image="2"
+              >
+                <img
+                  src="images/image-product-2-thumbnail.jpg"
+                  alt="Thumbnail 2"
+                >
+              </button>
+              <button
+                type="button"
+                class="lightbox__thumbnail-btn"
+                data-image="3"
+              >
+                <img
+                  src="images/image-product-3-thumbnail.jpg"
+                  alt="Thumbnail 3"
+                >
+              </button>
+              <button
+                type="button"
+                class="lightbox__thumbnail-btn"
+                data-image="4"
+              >
+                <img
+                  src="images/image-product-4-thumbnail.jpg"
+                  alt="Thumbnail 4"
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Product Page Content -->
       <div class="d-flex product_content">
         <!-- Product Images -->
         <section class="product_images">
           <img
+            id="main-img"
             class="active_img"
             src="./images/image-product-1.jpg"
             alt="product 1"
