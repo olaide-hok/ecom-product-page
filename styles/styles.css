@@ -397,6 +397,104 @@ ul {
   .sneakers .navigation .desktop_nav .menu-links_wrapper .links li a {
     color: #69707d;
   }
+  .sneakers .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    display: none;
+  }
+  .sneakers .lightbox.active {
+    display: block;
+  }
+  .sneakers .lightbox__content {
+    position: relative;
+    max-width: 550px;
+    margin: 90px auto;
+  }
+  .sneakers .lightbox__close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+  }
+  .sneakers .lightbox__close:hover path {
+    fill: #ff7e1b;
+  }
+  .sneakers .lightbox__prev, .sneakers .lightbox__next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: white;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sneakers .lightbox__prev:hover path, .sneakers .lightbox__next:hover path {
+    stroke: #ff7e1b;
+  }
+  .sneakers .lightbox__prev {
+    left: -28px;
+  }
+  .sneakers .lightbox__next {
+    right: -28px;
+  }
+  .sneakers .lightbox__gallery {
+    margin-top: 1.5rem;
+    overflow: hidden;
+  }
+  .sneakers .lightbox__main-img {
+    border-radius: 15px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .sneakers .lightbox__thumbnails {
+    display: flex;
+    column-gap: 2rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+  .sneakers .lightbox__thumbnail-btn {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    transition: border-color 0.3s ease;
+    position: relative; /* Required for positioning the overlay */
+    display: inline-block; /* Adjust as needed */
+  }
+  .sneakers .lightbox__thumbnail-btn.active::after {
+    border-color: #ff7e1b;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%);
+    pointer-events: none; /* Ensure the overlay doesn't block interactions */
+  }
+  .sneakers .lightbox__thumbnail-btn img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    display: block;
+  }
+  .sneakers .lightbox__thumbnail-btn:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+  }
   .sneakers .product_content {
     column-gap: 6rem;
     flex-direction: row;

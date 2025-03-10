@@ -442,6 +442,132 @@ ul {
       }
     }
 
+    // Lightbox styles
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 1000;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      &__content {
+        position: relative;
+        max-width: 550px;
+        margin: 90px auto;
+      }
+
+      &__close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+
+        &:hover {
+          path {
+            fill: $orange-500;
+          }
+        }
+      }
+
+      &__prev,
+      &__next {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        background-color: white;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        @include flex-center;
+
+        &:hover {
+          path {
+            stroke: $orange-500;
+          }
+        }
+      }
+
+      &__prev {
+        left: -28px;
+      }
+
+      &__next {
+        right: -28px;
+      }
+
+      &__gallery {
+        margin-top: $spacing-300;
+        overflow: hidden;
+      }
+
+      &__main-img {
+        border-radius: 15px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      &__thumbnails {
+        display: flex;
+        column-gap: $spacing-400;
+        justify-content: center;
+        margin-top: $spacing-500;
+      }
+
+      &__thumbnail-btn {
+        border: 2px solid transparent;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0;
+        transition: border-color 0.3s ease;
+        position: relative; /* Required for positioning the overlay */
+        display: inline-block; /* Adjust as needed */
+
+        &.active::after {
+          border-color: $orange-500;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.75) 0%,
+            rgba(255, 255, 255, 0.75) 100%
+          );
+          pointer-events: none; /* Ensure the overlay doesn't block interactions */
+        }
+
+        img {
+          width: 88px;
+          height: 88px;
+          object-fit: cover;
+          display: block;
+        }
+
+        &:hover::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0.5) 100%
+          );
+        }
+      }
+    }
+
     .product_content {
       column-gap: $spacing-1200;
       flex-direction: row;
