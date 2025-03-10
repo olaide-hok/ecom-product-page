@@ -47,7 +47,10 @@ updateCartQtyDisplay = () => {
 
 updateCartItems = () => {
   if (cartCount === 0) {
-    cartEmpty.classList.add("d-none");
+    cartEmpty.classList.remove("d-none");
+    cartItems.classList.remove("d-flex");
+    cartItems.classList.add("d-none");
+    cartItem.innerHTML = ``;
   } else {
     cartItem.innerHTML = `
         <img
@@ -75,7 +78,25 @@ updateCartItems = () => {
     cartItems.classList.remove("d-none");
     cartItems.classList.add("d-flex");
     cartEmpty.classList.add("d-none");
+
+    // Attach event listener to the delete button
+    const deleteButton = document.getElementById("cartDelete");
+
+    // Remove existing event listener (if any)
+    deleteButton.replaceWith(deleteButton.cloneNode(true)); // Replace button to remove listeners
+
+    // Attach new event listener
+    document
+      .getElementById("cartDelete")
+      .addEventListener("click", deleteCartItem);
   }
+};
+
+deleteCartItem = () => {
+  cartCount = 0;
+  cartTotal = 0;
+  cartQty.textContent = cartCount;
+  updateCartItems();
 };
 
 // Decrease quantity
