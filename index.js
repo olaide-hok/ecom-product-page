@@ -115,6 +115,34 @@ lightboxThumbnails.forEach((btn) => {
   });
 });
 
+// Add touch swipe functionality for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+mainImage.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+mainImage.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeThreshold = 50; // minimum distance for a swipe
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (Math.abs(swipeDistance) >= swipeThreshold) {
+    if (swipeDistance > 0) {
+      // Swiped right
+      navigateGallery("prev");
+    } else {
+      // Swiped left
+      navigateGallery("next");
+    }
+  }
+}
+
 cartBtn.addEventListener("click", () => {
   const isCartModalOpen = cartModal.classList.contains("d-flex");
   if (isCartModalOpen) {
