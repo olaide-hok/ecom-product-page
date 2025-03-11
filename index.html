@@ -27,8 +27,8 @@
   </head>
   <body>
     <main class="sneakers">
-      <header role="navigation" class="navigation">
-        <nav class="d-flex desktop_nav">
+      <header class="navigation">
+        <nav role="navigation" class="d-flex desktop_nav">
           <div class="d-flex menu-links_wrapper">
             <div class="d-flex menu_icon-and-logo">
               <button id="mobile-menu" class="mobile_menu-btn" type="button">
@@ -76,7 +76,7 @@
         </nav>
       </header>
       <!-- Mobile and Tablet Navigation -->
-      <nav id="mobile-nav" class="mobile_nav d-none">
+      <nav role="navigation" id="mobile-nav" class="mobile_nav d-none">
         <div>
           <button id="close-menu" type="button">
             <img src="./images/icon-close.svg" alt="icon close mobile menu">
@@ -217,7 +217,7 @@
       <!-- Product Page Content -->
       <div class="d-flex product_content">
         <!-- Product Images -->
-        <section class="product_images">
+        <div class="product_images">
           <div class="gallery_main">
             <button
               type="button"
@@ -291,9 +291,9 @@
               >
             </button>
           </div>
-        </section>
+        </div>
         <!-- Product Details -->
-        <section class="product_details">
+        <div class="product_details">
           <div class="data">
             <p class="brand">Sneaker Company</p>
             <p class="name">Fall Limited Edition Sneakers</p>
@@ -330,7 +330,7 @@
               Add to cart
             </button>
           </div>
-        </section>
+        </div>
       </div>
     </main>
   </body>
