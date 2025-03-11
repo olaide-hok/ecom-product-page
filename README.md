@@ -28,12 +28,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![](./ecom-product-page.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Link](https://olaide-hok.github.io/ecom-product-page/)
 
 ## My process
 
@@ -47,8 +46,8 @@ Users should be able to:
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [How to Create a Lightbox](https://www.w3schools.com/howto/howto_js_lightbox.asp) - This helped me with Lightbox. I really liked this pattern and will use it going forward.
+- [How to Create a Slideshow](https://www.w3schools.com/howto/howto_js_slideshow.asp) - This is an amazing article which helped me in creating a carousel. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
