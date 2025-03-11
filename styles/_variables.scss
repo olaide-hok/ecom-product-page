@@ -91,3 +91,48 @@ $spacing-1600: rem(128px);
   font-weight: 700;
   line-height: 26px;
 }
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin thumbnail-hover {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+}
+
+@mixin thumbnail-active {
+  border: 2px solid $orange-500;
+  border-radius: rem(10px);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  pointer-events: none; /* Ensure the overlay doesn't block interactions */
+}
+
+@mixin thumbnail-btn {
+  border-radius: rem(10px);
+  position: relative; /* Required for positioning the overlay */
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
