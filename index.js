@@ -8,6 +8,9 @@ const overlay = document.getElementById("overlay");
 
 // Gallery
 const mainImage = document.getElementById("main-img");
+const thumbnailButtons = document.querySelectorAll(".thumbnail-btn");
+const galleryPrev = document.querySelector(".gallery_nav--prev");
+const galleryNext = document.querySelector(".gallery_nav--next");
 
 // Lightbox
 const lightbox = document.querySelector(".lightbox");
@@ -58,10 +61,26 @@ function updateMainImage(imageNumber) {
   mainImage.src = mainImageSrc;
   lightboxImage.src = mainImageSrc;
 
+  // Update thumbnail active state
+  thumbnailButtons.forEach((btn) => {
+    btn.classList.toggle("active", parseInt(btn.dataset.image) === imageNumber);
+  });
+
   // Update lightbox thumbnail active state
   lightboxThumbnails.forEach((btn) => {
     btn.classList.toggle("active", parseInt(btn.dataset.image) === imageNumber);
   });
+}
+
+// Mobile carousel functionality
+function navigateGallery(direction) {
+  let newImage = currentImage;
+  if (direction === "next") {
+    newImage = currentImage === 4 ? 1 : currentImage + 1;
+  } else {
+    newImage = currentImage === 1 ? 4 : currentImage - 1;
+  }
+  updateMainImage(newImage);
 }
 
 function navigateLightbox(direction) {
@@ -75,6 +94,16 @@ function navigateLightbox(direction) {
 }
 
 mainImage.addEventListener("click", openLightbox);
+
+// Mobile carousel navigation
+galleryPrev.addEventListener("click", () => navigateGallery("prev"));
+galleryNext.addEventListener("click", () => navigateGallery("next"));
+
+thumbnailButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    updateMainImage(parseInt(btn.dataset.image));
+  });
+});
 lightboxClose.addEventListener("click", closeLightbox);
 lightboxPrev.addEventListener("click", () => navigateLightbox("prev"));
 lightboxNext.addEventListener("click", () => navigateLightbox("next"));
