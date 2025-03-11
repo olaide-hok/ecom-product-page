@@ -135,6 +135,13 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// Window resize handler for lightbox
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 1024 && isLightboxOpen) {
+    closeLightbox();
+  }
+});
+
 // Add touch swipe functionality for mobile
 let touchStartX = 0;
 let touchEndX = 0;
