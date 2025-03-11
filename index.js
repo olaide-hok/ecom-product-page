@@ -22,6 +22,7 @@ const lightboxThumbnails = document.querySelectorAll(
   ".lightbox__thumbnail-btn",
 );
 let currentImage = 1;
+let isLightboxOpen = false;
 
 // Quantity
 const qtyDec = document.getElementById("decQty");
@@ -43,6 +44,7 @@ let cartTotal = 0;
 // Lightbox functionality
 function openLightbox() {
   // Only open lightbox on desktop
+  isLightboxOpen = true;
   if (window.innerWidth >= 1024) {
     lightbox.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -50,6 +52,7 @@ function openLightbox() {
 }
 
 function closeLightbox() {
+  isLightboxOpen = false;
   lightbox.classList.remove("active");
   document.body.style.overflow = "";
 }
@@ -113,6 +116,23 @@ lightboxThumbnails.forEach((btn) => {
   btn.addEventListener("click", () => {
     updateMainImage(parseInt(btn.dataset.image));
   });
+});
+
+// Keyboard navigation for lightbox
+document.addEventListener("keydown", (e) => {
+  if (!isLightboxOpen) return;
+
+  switch (e.key) {
+    case "Escape":
+      closeLightbox();
+      break;
+    case "ArrowLeft":
+      navigateLightbox("prev");
+      break;
+    case "ArrowRight":
+      navigateLightbox("next");
+      break;
+  }
 });
 
 // Add touch swipe functionality for mobile
