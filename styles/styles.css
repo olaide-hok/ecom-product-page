@@ -133,7 +133,7 @@ ul {
   height: 1.25rem;
 }
 .sneakers .navigation .desktop_nav .menu-links_wrapper .menu_icon-and-logo .mobile_menu-btn img {
-  width: 16px;
+  width: 1rem;
   height: 15px;
 }
 .sneakers .navigation .desktop_nav .menu-links_wrapper .links {
@@ -159,6 +159,9 @@ ul {
 .sneakers .navigation .desktop_nav .avatar_cart .avatar img {
   height: 1.5rem;
   width: 1.5rem;
+}
+.sneakers .lightbox {
+  display: none;
 }
 .sneakers .mobile_nav {
   background-color: #ffffff;
@@ -238,11 +241,45 @@ ul {
 .sneakers .product_content {
   flex-direction: column;
 }
-.sneakers .product_content .product_images .active_img {
+.sneakers .product_content .product_images .gallery_main {
+  position: relative;
+  cursor: pointer;
+}
+.sneakers .product_content .product_images .gallery_main img {
   width: 100%;
   height: 18.75rem;
+  display: block;
 }
-.sneakers .product_content .product_images .gallery {
+.sneakers .product_content .product_images .gallery_nav {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sneakers .product_content .product_images .gallery_nav img {
+  width: 10px;
+  height: 10px;
+}
+.sneakers .product_content .product_images .gallery_nav--prev {
+  left: 1rem;
+}
+.sneakers .product_content .product_images .gallery_nav--next {
+  right: 1rem;
+}
+.sneakers .product_content .product_images .gallery_nav--prev:hover svg path, .sneakers .product_content .product_images .gallery_nav--next:hover svg path {
+  stroke: #ff7e1b;
+}
+.sneakers .product_content .product_images .gallery_thumbnails {
   display: none;
 }
 .sneakers .product_content .product_details {
@@ -341,7 +378,7 @@ ul {
     flex-direction: column;
     margin-top: 3rem;
   }
-  .sneakers .product_content .product_images .active_img {
+  .sneakers .product_content .product_images .gallery_main img {
     border-radius: 15px;
   }
   .sneakers .product_content .product_details {
@@ -461,16 +498,16 @@ ul {
     margin-top: 2.5rem;
   }
   .sneakers .lightbox__thumbnail-btn {
-    border: 2px solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 0;
-    transition: border-color 0.3s ease;
+    border-radius: 0.625rem;
     position: relative; /* Required for positioning the overlay */
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    padding: 0;
     display: inline-block; /* Adjust as needed */
   }
   .sneakers .lightbox__thumbnail-btn.active::after {
-    border-color: #ff7e1b;
+    border: 2px solid #ff7e1b;
+    border-radius: 0.625rem;
     content: "";
     position: absolute;
     top: 0;
@@ -500,24 +537,53 @@ ul {
     flex-direction: row;
     margin-top: 5rem;
   }
-  .sneakers .product_content .product_images .active_img {
+  .sneakers .product_content .product_images .gallery_main {
+    margin-bottom: 32px;
     border-radius: 15px;
+    overflow: hidden;
+  }
+  .sneakers .product_content .product_images .gallery_main img {
     height: 27.8125rem;
   }
-  .sneakers .product_content .product_images .gallery {
+  .sneakers .product_content .product_images .gallery_nav {
+    display: none;
+  }
+  .sneakers .product_content .product_images .gallery_thumbnails {
     display: flex;
     column-gap: 2rem;
     margin-top: 2rem;
   }
-  .sneakers .product_content .product_images .gallery .thumbnail {
+  .sneakers .product_content .product_images .gallery_thumbnails .thumbnail-btn {
     border-radius: 0.625rem;
-    cursor: pointer;
+    position: relative; /* Required for positioning the overlay */
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+  .sneakers .product_content .product_images .gallery_thumbnails .thumbnail-btn img {
     width: 5.5rem;
     height: 5.5rem;
+    object-fit: cover;
   }
-  .sneakers .product_content .product_images .gallery .thumbnail.active {
+  .sneakers .product_content .product_images .gallery_thumbnails .thumbnail-btn.active::after {
     border: 2px solid #ff7e1b;
+    border-radius: 0.625rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 100%);
+    pointer-events: none; /* Ensure the overlay doesn't block interactions */
+  }
+  .sneakers .product_content .product_images .gallery_thumbnails .thumbnail-btn:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
   }
 }
 @media screen and (min-width: 1440px) {

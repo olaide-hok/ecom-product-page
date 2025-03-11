@@ -95,7 +95,7 @@ ul {
           }
           .mobile_menu-btn {
             img {
-              width: 16px;
+              width: $spacing-200;
               height: 15px;
             }
           }
@@ -133,6 +133,11 @@ ul {
       }
     }
   }
+
+  .lightbox {
+    display: none;
+  }
+
   .mobile_nav {
     background-color: $white;
     flex-direction: column;
@@ -228,12 +233,57 @@ ul {
     flex-direction: column;
 
     .product_images {
-      .active_img {
-        width: 100%;
-        height: rem(300px);
+      .gallery {
+        &_main {
+          position: relative;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+            height: rem(300px);
+            display: block;
+          }
+        }
+
+        &_nav {
+          display: none;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: white;
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 2;
+          @include flex-center;
+
+          img {
+            width: 10px;
+            height: 10px;
+          }
+
+          &--prev {
+            left: $spacing-200;
+          }
+
+          &--next {
+            right: $spacing-200;
+          }
+
+          &--prev:hover,
+          &--next:hover {
+            svg {
+              path {
+                stroke: $orange-500;
+              }
+            }
+          }
+        }
       }
 
-      .gallery {
+      .gallery_thumbnails {
         display: none;
       }
     }
@@ -365,8 +415,12 @@ ul {
       flex-direction: column;
       margin-top: $spacing-600;
       .product_images {
-        .active_img {
-          border-radius: 15px;
+        .gallery {
+          &_main {
+            img {
+              border-radius: 15px;
+            }
+          }
         }
       }
 
@@ -521,28 +575,12 @@ ul {
       }
 
       &__thumbnail-btn {
-        border: 2px solid transparent;
-        border-radius: 10px;
-        overflow: hidden;
+        @include thumbnail-btn;
         padding: 0;
-        transition: border-color 0.3s ease;
-        position: relative; /* Required for positioning the overlay */
         display: inline-block; /* Adjust as needed */
 
         &.active::after {
-          border-color: $orange-500;
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.75) 0%,
-            rgba(255, 255, 255, 0.75) 100%
-          );
-          pointer-events: none; /* Ensure the overlay doesn't block interactions */
+          @include thumbnail-active;
         }
 
         img {
@@ -553,17 +591,7 @@ ul {
         }
 
         &:hover::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.5) 0%,
-            rgba(255, 255, 255, 0.5) 100%
-          );
+          @include thumbnail-hover;
         }
       }
     }
@@ -574,29 +602,42 @@ ul {
       margin-top: $spacing-1000;
 
       .product_images {
-        .active_img {
-          border-radius: 15px;
-          height: rem(445px);
+        .gallery {
+          &_main {
+            margin-bottom: 32px;
+            border-radius: 15px;
+            overflow: hidden;
+
+            img {
+              height: rem(445px);
+            }
+          }
+
+          &_nav {
+            display: none;
+          }
         }
 
-        .gallery {
+        .gallery_thumbnails {
           display: flex;
           column-gap: $spacing-400;
           margin-top: $spacing-400;
 
-          .thumbnail {
-            border-radius: rem(10px);
-            cursor: pointer;
-            width: rem(88px);
-            height: rem(88px);
+          .thumbnail-btn {
+            @include thumbnail-btn;
 
-            &.active {
-              border: 2px solid $orange-500;
-              background: linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.75) 0%,
-                rgba(255, 255, 255, 0.75) 100%
-              );
+            img {
+              width: rem(88px);
+              height: rem(88px);
+              object-fit: cover;
+            }
+
+            &.active::after {
+              @include thumbnail-active;
+            }
+
+            &:hover::after {
+              @include thumbnail-hover;
             }
           }
         }
