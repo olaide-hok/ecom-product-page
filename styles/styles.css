@@ -160,6 +160,10 @@ ul {
   height: 1.5rem;
   width: 1.5rem;
 }
+.sneakers .navigation .desktop_nav .avatar_cart .avatar img:hover, .sneakers .navigation .desktop_nav .avatar_cart .avatar img:active {
+  border: 2px solid #ff7e1b;
+  border-radius: 50%;
+}
 .sneakers .lightbox {
   display: none;
 }
