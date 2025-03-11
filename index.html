@@ -218,33 +218,78 @@
       <div class="d-flex product_content">
         <!-- Product Images -->
         <section class="product_images">
-          <img
-            id="main-img"
-            class="active_img"
-            src="./images/image-product-1.jpg"
-            alt="product 1"
-          >
-          <div class="gallery">
-            <img
-              class="thumbnail active"
-              src="./images/image-product-1-thumbnail.jpg"
-              alt="product 1 thumbnail"
+          <div class="gallery_main">
+            <button
+              type="button"
+              class="gallery_nav gallery_nav--prev"
+              aria-label="Previous image"
             >
-            <img
-              class="thumbnail"
-              src="./images/image-product-2-thumbnail.jpg"
-              alt="product 1 thumbnail"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="9"
+                height="14"
+                viewBox="0 0 9 14"
+                fill="none"
+              >
+                <path
+                  d="M7.85718 1.28571L2.14289 6.99999L7.85718 12.7143"
+                  stroke="#1D2026"
+                  stroke-width="3"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="gallery_nav gallery_nav--next"
+              aria-label="Next image"
             >
+              <!-- <img src="images/icon-next.svg" alt="Next"> -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="14"
+                viewBox="0 0 10 14"
+                fill="none"
+              >
+                <path
+                  d="M2 1.28571L7.71429 6.99999L2 12.7143"
+                  stroke="#1D2026"
+                  stroke-width="3"
+                />
+              </svg>
+            </button>
             <img
-              class="thumbnail"
-              src="./images/image-product-3-thumbnail.jpg"
-              alt="product 1 thumbnail"
+              id="main-img"
+              class="gallery_main-img"
+              src="./images/image-product-1.jpg"
+              alt="product 1"
             >
-            <img
-              class="thumbnail"
-              src="./images/image-product-4-thumbnail.jpg"
-              alt="product 1 thumbnail"
-            >
+          </div>
+          <div class="gallery_thumbnails">
+            <button type="button" class="thumbnail-btn active" data-image="1">
+              <img
+                src="./images/image-product-1-thumbnail.jpg"
+                alt="product 1 thumbnail"
+              >
+            </button>
+            <button type="button" class="thumbnail-btn" data-image="2">
+              <img
+                src="./images/image-product-2-thumbnail.jpg"
+                alt="product 1 thumbnail"
+              >
+            </button>
+            <button type="button" class="thumbnail-btn" data-image="3">
+              <img
+                src="./images/image-product-3-thumbnail.jpg"
+                alt="product 1 thumbnail"
+              >
+            </button>
+            <button type="button" class="thumbnail-btn" data-image="4">
+              <img
+                src="./images/image-product-4-thumbnail.jpg"
+                alt="product 1 thumbnail"
+              >
+            </button>
           </div>
         </section>
         <!-- Product Details -->
