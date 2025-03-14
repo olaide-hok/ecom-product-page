@@ -154,7 +154,7 @@ ul {
     width: rem(250px);
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 4;
     transition: transform 0.3s ease;
 
     &.d-none {
@@ -359,6 +359,15 @@ ul {
           .qty {
             color: $grey-950;
           }
+
+          .dec:hover,
+          .inc:hover {
+            svg {
+              use {
+                fill: $orange-300;
+              }
+            }
+          }
         }
 
         .addToCart {
@@ -369,6 +378,11 @@ ul {
 
           img {
             margin-right: $spacing-200;
+          }
+
+          &:hover {
+            background-color: $orange-300;
+            box-shadow: 0px 20px 50px -20px rgba(255, 126, 27, 0.25);
           }
         }
       }
